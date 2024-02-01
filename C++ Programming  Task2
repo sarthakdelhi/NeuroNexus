@@ -1,0 +1,46 @@
+TASK 2 - SIMPLE CALCULATOR
+
+Develop a calculator program that performs basic arithmetic operations such as addition, subtraction,
+multiplication, and division. Allow the user to input two numbers and choose an operation to perform.
+
+
+# include <iostream>
+using namespace std;
+
+int main() {
+
+  char op;  //stores the operation to be performed like addition, subtraction, multiplication or division.
+  float num1, num2;    //stores the numbers between which the operation is to be performed.
+
+  cout << "Enter operator: +, -, *, /: ";
+  cin >> op;                //takes the operator as input from the user
+
+  cout << "Enter two operands: ";
+  cin >> num1 >> num2;    //takes the two numbers as input from the user
+
+  switch(op) {      switch statement on the basis of operation provided by user
+
+    case '+':      //Addition
+      cout << num1 << " + " << num2 << " = " << num1 + num2;       //add the two numbers provided by the user and print the answer in output.
+      break;
+
+    case '-':     //Subtraction
+      cout << num1 << " - " << num2 << " = " << num1 - num2;      //subtracts the two numbers provided by the user and print the answer in output.
+      break;
+
+    case '*':  //Multiplication
+      cout << num1 << " * " << num2 << " = " << num1 * num2;     //multiplies the two numbers provided by the user and print the answer in output.
+      break;
+
+    case '/':   //Division
+      cout << num1 << " / " << num2 << " = " << num1 / num2;    //divides the two numbers provided by the user and print the answer in output.
+      break;
+
+    default:
+     cout << "Error! operator is not correct";       // If the operator is other than +, -, * or /, then error message is shown
+      break;
+  }
+                     //The break statement is used in a switch statement after every case to exit the switch block once a matching case is found. Without the break statement, control would "fall through" to subsequent cases, leading to wrong answer.
+
+  return 0;
+}
