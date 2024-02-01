@@ -1,0 +1,38 @@
+TASK 1 - NUMBER GUESSING GAME
+
+Create a program that generates a random number and asks the user to guess it. Provide feedback on
+whether the guess is too high or too low until the user guesses the correct number.
+
+Code:-
+
+#include <iostream>
+#include <cstdlib>  //This header file provides several functions involving memory allocation, random number generation, and other utility functions like srand() and rand()
+#include <ctime>  //provides functionality related to time and date in the C++ Standard Library. One of the most commonly used function from this header is std::time().
+using namespace std;
+
+int main()
+{
+int num=0;                          //it will store the randomly generated number.
+int guess=0;                        //it will take the guess as an input from user.
+int tries=0;                        //it will store the number of tries the user had done until guess is made correctly.
+	srand(time(0));                 //common way to seed the random number generator 
+	num = rand() % 100 + 1;         // to generate a random number between 1 and 100
+	cout << "Guess The Number\n";
+
+	do
+	{
+		cout << "Enter a guess between 1 and 100 : ";
+		cin >> guess;
+		tries++;
+
+		if (guess > num)     //checks if guess is greater than number generated randomly. If it is true, it will print that the guess is too high as compared to the original number.
+			cout << "Too high! Try Again\n\n";
+		else if (guess < num)   //checks if guess is smaller than number generated randomly. If it is true, it will print that the guess is too low as compared to the original number.
+			cout << "Too low! Try Again\n\n";
+		else
+			cout << "\nWell Done! You got it in " << tries << " guesses!\n";  //checks if guess is equal to the number generated randomly. If it is true, it will print that the guess is right.
+	} while (guess != num);     //this loop will run until guess is not equal to the number generated randomly.
+
+	return 0;
+}
+
